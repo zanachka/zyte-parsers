@@ -11,6 +11,11 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/p/zyte-parsers
+    permissions:
+      id-token: write
 
     steps:
     - uses: actions/checkout@v5
@@ -23,6 +28,4 @@ jobs:
         pip install --upgrade build twine
         python -m build
     - name: Publish to PyPI
-      uses: pypa/gh-action-pypi-publish@v1.13.0
-      with:
-        password: ${{ secrets.PYPI_TOKEN }}
+      uses: pypa/gh-action-pypi-publish@release/v1
