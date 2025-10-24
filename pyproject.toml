@@ -38,7 +38,11 @@ dependencies = [
 dynamic = ["version"]
 
 [project.urls]
+Homepage = "https://github.com/zytedata/zyte-parsers"
+Documentation = "https://zyte-parsers.readthedocs.io/"
 Source = "https://github.com/zytedata/zyte-parsers"
+Tracker = "https://github.com/zytedata/zyte-parsers/issues"
+"Release notes" = "https://zyte-parsers.readthedocs.io/en/latest/changelog.html"
 
 [tool.bumpversion]
 current_version = "0.5.1"
@@ -50,6 +54,12 @@ tag_name = "{new_version}"
 filename = "zyte_parsers/__init__.py"
 search = "__version__ = \"{current_version}\""
 replace = "__version__ = \"{new_version}\""
+
+[[tool.bumpversion.files]]
+filename = 'CHANGES.rst'
+search = "\\(unreleased\\)$"
+replace = "({now:%Y-%m-%d})"
+regex = true
 
 [tool.coverage.run]
 branch = true
@@ -68,11 +78,6 @@ include = [
 
 [tool.mypy]
 strict = true
-
-# to be fixed
-[[tool.mypy.overrides]]
-module = ["html_text", "price_parser"]
-implicit_reexport = true
 
 [[tool.mypy.overrides]]
 module = [

@@ -1,6 +1,14 @@
 Changes
 =======
 
+0.6.0 (unreleased)
+------------------
+
+* Added support for Python 3.14.
+* Migrated the build system to ``hatchling``.
+* Improved type hints.
+* CI improvements.
+
 0.5.1 (2024-10-11)
 ------------------
 
