@@ -45,7 +45,7 @@ Tracker = "https://github.com/zytedata/zyte-parsers/issues"
 "Release notes" = "https://zyte-parsers.readthedocs.io/en/latest/changelog.html"
 
 [tool.bumpversion]
-current_version = "0.5.1"
+current_version = "0.6.0"
 commit = true
 tag = true
 tag_name = "{new_version}"
